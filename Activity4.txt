@@ -1,0 +1,16 @@
+ACTIVITY 4 : Establish a new directory, populate it with script files, initiate an empty repository on GitHub, convert the local directory into a Git repository, and link it to GitHub for pushing the code into the repository.
+
+#To Establish a new directory :
+mkdir github_task1
+
+# To populate script files with some content:
+touch script1.sh script2.sh
+echo > "Hello world from script1.sh file"
+echo > "Hello world from script2.sh file"
+
+# To Initiate an empty repository on GitHub, convert the local directory into a Git repository, and link it to GitHub for pushing the code into the repository.:
+git init
+git commit -m "This is a sample message"
+git branch -M main
+git remote add origin https://github.com/shridhard1/github_task1.git
+git push -u origin main
