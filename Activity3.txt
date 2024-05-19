@@ -1,0 +1,52 @@
+ACTIVITY 3 : Get me IP address of particular domain (guvi.in) How do I find my CPU/memory usage of my server? Test the connectivity between 2 nodes? I have deployed an application in guvi.com:9000, and logs shows my app is running, but I’m unable to view the page. Check whether my port is open or not ?
+
+# To get IP Address: 
+nslookup guvi.in
+
+#Use This below command to find Memory/CPU usage:
+top
+
+#Test the connectivity between 2 nodes?
+Created a 2 ec2 instances in aws:
+
+Server1 private ip address: 172.37.78.196
+Server2 private ip address: 172.21.20.13
+
+Server1 public ip address:
+Server2 public ip address: 51.118.119.322
+
+From Server 1:
+
+# To generate a pubic key
+ssh-keygen
+
+# To list the public keys
+# Navigate to .ssh directory and isting them
+cd .ssh
+ls -l
+
+# Coping the id_rsa.pub file content (public key)
+cat id_rsa.pub
+
+From Server 2:
+
+# Naviagte to .ssh directory and open authorized_keys file
+cd .ssh
+ls -l
+cat authorized_keys
+# Paste the public key in this file
+
+From Server 1:
+
+# SSH to public ip address from server 2
+ssh 51.118.119.322
+
+I have deployed an application in guvi.com:9000, and logs shows my app is running, but I’m unable to view the page. Check whether my port is open or not ?
+# To check the port 9000 is opened or not
+# Using lsof
+lsof -i:9000
+
+# Using netstat
+netstat -tuln | grep 9000
+
+
