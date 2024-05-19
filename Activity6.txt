@@ -1,0 +1,124 @@
+Syntax for all loops in bash scripting
+There are mainly 3 types of loops are present in bash scripting, They are,
+
+For loop
+While Loop
+Until Loop
+
+
+1. For Loop
+There are different types of for loops are present in bash script, They are
+
+Simple for loop
+Range based for loop
+Array iteration for loops
+C-Styled for loop
+Infinite for loop
+
+1. Simple for loop
+Syntax:
+for <variable_name> in <list_of_items>;
+do
+    <some_commands>
+done
+
+Example: #!/bin/bash
+for i in 10 20 30
+do
+    echo $i
+done
+----------------------------------------------------------
+2. Range based for loop
+Syntax
+
+for <variable_name> in <range_of_items>;
+do
+    <some_commands>
+done
+
+Example:  #!/bin/bash
+for i in {1..10..2}
+do
+    echo $i
+done
+---------------------------------------------------------
+
+3. Array iteration for loops
+Syntax
+
+for <variable_name> in <array_of_items>;
+do
+    <some_commands>
+done
+
+Example: #!/bin/bash
+games=("cricket" "tennis" "vollyball" "basketball")
+for game in ${games[@]}
+do
+    echo $game
+done
+---------------------------------------------------------
+
+4. C-Styled for loop
+Syntax
+
+for (( <initialiser> ; <condition> ; <inc/dec> ))
+do
+    <some_commands>
+done
+
+Exapmle: #!/bin/bash
+for (( i=0 ; i<5 ;i++ ))
+do
+    echo $i
+done
+--------------------------------------------------------
+5. Infinite for loop
+Syntax
+
+for (( ; ; ))
+do
+    <some_statements_with_break_condition>
+done
+
+Example: #!/bin/bash
+n=4
+for (( ; ; ));
+do
+	if [[ $n == 5 ]]
+	then
+		break
+	fi
+	((n++))
+done
+echo $n
+----------------------------------------------------------
+While Loop
+Syntax
+
+while [[ <condition> ]];
+do
+    <statments>
+done
+
+Example: #!/bin/bash
+n=0
+while [[ n -lt 5 ]]
+do
+	echo $n
+	(( n++ ))
+done
+------------------------------------------------------------
+Until Loop
+until [[ <condition> ]];
+do
+    <statments>
+done
+
+Example:
+#!/bin/bashn=10
+until [[ n -lt 5 ]]
+do
+	echo $n
+	(( n-- ))
+done
